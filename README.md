@@ -94,10 +94,10 @@ scp pierrick_harnay@ssh3.hac.uri.edu:/data/putnamlab/pharnay/Microtetia/fastqc_r
 
 # 3. Merge files for each sample across lanes.
 
-##Overview
+## Overview
 This step merge all files for each sample so taht we have one sequence file for each coral or water.
 
-##Code:
+## Code:
 
 Merge all lanes
 
@@ -132,7 +132,7 @@ sbatch merge.sh
 ```
 Check that we have new "cat" sequences with `cd raw/` and `ls`.
 
-#4. Conduct QC and filtering of sequences
+# 4. Conduct QC and filtering of sequences
 ## Overview:
 
 This step trims and cleans our reads and generates a new QC report taht shows our clean sequence information. 
