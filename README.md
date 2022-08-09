@@ -35,7 +35,6 @@ Run fastqc on the rax files and genrates a multiQC report
 
 In the `Microtetia`folder, make a folder `fastqc_results`
 
-```
 Now we need to start the script.
 
 ```
@@ -90,6 +89,7 @@ For this, open a new terminal. Output file to local computer and view.
 
 ```
 scp pierrick_harnay@ssh3.hac.uri.edu:/data/putnamlab/pharnay/Microtetia/fastqc_results/microtetia_tagseq_raw_qc_report.html /users/pierrickharnay/Dropbox/MyProjects/MicrobioTetia_20212022/fastQC/Output
+
 ```
 
 # 3. Merge files for each sample across lanes.
@@ -105,6 +105,7 @@ In the Microtetia folder:
 
 ```
 nano merge.sh
+
 ```
 
 ```
@@ -124,8 +125,10 @@ do cat "$i"_L001_R1_001.fastq.gz "$i"_L002_R1_001.fastq.gz > "$i"_R1_cat.fastq.g
 
 done;
 ```
+
 ```
 sbatch merge.sh
+
 ```
 Check that we have new "cat" sequences with `cd raw/` and `ls`.
 
@@ -139,6 +142,7 @@ This step trims and cleans our reads and generates a new QC report taht shows ou
 In the Microtetia folder:
 ```
 nano qc.sh
+
 ```
 
 ```
@@ -163,6 +167,8 @@ cd raw
 array1=($(ls *cat.fastq.gz))
 
 # fastp loop; trim the Read 1 TruSeq adapter sequence; trim poly x default 10 (to trim polyA) 
+
+```
 
 
 
